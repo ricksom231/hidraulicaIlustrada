@@ -48,10 +48,12 @@ export const basicItems = [
   'Guia visual organizado por categorias',
   'Consulta rápida pelo celular',
   'Entrega digital imediata',
+  'Acesso 100% vitalício',
 ];
 
 export const completeItems = [
   '+180 Problemas Hidráulicos Explicados com Imagens',
+  'Acesso 100% vitalício a todos os materiais',
   '+80 Mapas Visuais de Instalações Hidráulicas',
   'Guia Visual de Peças e Conexões',
   '+50 Erros Hidráulicos — Certo x Errado',

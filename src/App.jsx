@@ -91,7 +91,10 @@ function Hero() {
           <img className="heroImage" src="/assets/hero-product.png" alt="Capa do guia +180 Problemas Hidráulicos Explicados com Imagens" width="1055" height="1491" fetchPriority="high" />
         </div>
         <CTA className="primaryCta">QUERO ACESSAR O GUIA VISUAL</CTA>
-        <p className="microcopy">Material digital para consultar no celular • Acesso imediato após a compra</p>
+        <div className="heroLifetime" aria-label="Acesso 100% vitalício. Comprou uma vez. O acesso ao material não expira.">
+          <span aria-hidden="true">∞</span>
+          <p><strong>ACESSO 100% VITALÍCIO</strong><small>Comprou uma vez. O acesso ao material não expira.</small></p>
+        </div>
       </div>
     </section>
   );
@@ -201,8 +204,11 @@ function BonusValueAnchor() {
   );
 }
 
-function PlanList({ items }) {
-  return <ul className="planList">{items.map((item) => <li key={item}><span aria-hidden="true">✓</span><span>{item}</span></li>)}</ul>;
+function PlanList({ items, emphasizeLifetime = false }) {
+  return <ul className="planList">{items.map((item) => {
+    const isLifetime = item.includes('100% vitalício');
+    return <li className={isLifetime && emphasizeLifetime ? 'lifetimeBenefit' : ''} key={item}><span aria-hidden="true">{isLifetime ? '∞' : '✓'}</span><span>{item}</span></li>;
+  })}</ul>;
 }
 
 function TimerUnit({ value, label }) {
@@ -261,7 +267,7 @@ function PricingSection({ time, onBasicClick }) {
     <section className="priceSection" id="planos">
       <div className="priceIntro" data-reveal><p className="eyebrow">ESCOLHA SEU PLANO</p><h2>Escolha o melhor plano para você</h2><PricingCountdown time={time} /></div>
       <article className="basicCard" data-reveal><p className="planEyebrow">PLANO BÁSICO</p><h3>O guia principal</h3><p>Para quem quer consultar as 180 situações ilustradas.</p><div className="planPrice"><small>PAGAMENTO ÚNICO</small><strong><sup>R$</sup>10<em>,00</em></strong></div><PlanList items={basicItems} /><button className="planButton basicButton" type="button" onClick={onBasicClick}>QUERO O PLANO BÁSICO</button><p className="microcopy">Acesso digital imediato</p></article>
-      <article className="completeCard" data-reveal style={{ '--reveal-delay': '80ms' }}><span className="featuredBadge">MAIS VANTAJOSO</span><p className="planEyebrow">PLANO COMPLETO</p><h3>O guia + biblioteca visual</h3><p>Para consultar por problema, instalação, peça, erro ou sintoma.</p><div className="planPrice"><small>PAGAMENTO ÚNICO</small><strong><sup>R$</sup>27<em>,90</em></strong><span>Por mais R$ 17,90, você leva os quatro materiais extras.</span></div><PlanList items={completeItems} /><a className="planButton completeButton" href={checkoutLinks.complete}>QUERO O PLANO COMPLETO →</a><p className="microcopy">Acesso imediato aos 5 materiais</p></article>
+      <article className="completeCard" data-reveal style={{ '--reveal-delay': '80ms' }}><span className="featuredBadge">MAIS VANTAJOSO</span><p className="planEyebrow">PLANO COMPLETO</p><h3>O guia + biblioteca visual</h3><p>Para consultar por problema, instalação, peça, erro ou sintoma.</p><div className="planPrice"><small>PAGAMENTO ÚNICO</small><strong><sup>R$</sup>27<em>,90</em></strong><span>Por mais R$ 17,90, você leva os quatro materiais extras.</span></div><PlanList items={completeItems} emphasizeLifetime /><a className="planButton completeButton" href={checkoutLinks.complete}>QUERO O PLANO COMPLETO →</a><p className="microcopy">Acesso imediato aos 5 materiais</p></article>
     </section>
   );
 }

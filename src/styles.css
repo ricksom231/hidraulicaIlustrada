@@ -52,6 +52,11 @@ h2 { font-size: clamp(2rem, 4vw, 3.25rem); }
 .mockPageSide { z-index: 2; right: 0; bottom: 3%; transform: rotate(2deg); }
 .primaryCta { width: min(100%, 440px); margin: 28px auto 0; background: var(--orange); color: #1f3036; box-shadow: 0 12px 28px rgba(0,0,0,.24); }
 .primaryCta:hover { background: #ffa241; }
+.heroLifetime { width: max-content; max-width: 100%; display: flex; align-items: center; justify-content: center; gap: 10px; margin: 14px auto 0; color: #e5f4f7; text-align: left; }
+.heroLifetime > span { width: 30px; height: 30px; flex: 0 0 30px; display: grid; place-items: center; border: 1px solid rgba(112,212,167,.55); border-radius: 50%; color: #70d4a7; font-size: 1.25rem; font-weight: 600; line-height: 1; }
+.heroLifetime p { display: flex; flex-direction: column; margin: 0; line-height: 1.35; }
+.heroLifetime strong { color: var(--white); font-size: .7rem; letter-spacing: .07em; }
+.heroLifetime small { color: #b9d8e1; font-size: .65rem; }
 .microcopy { margin: 10px 0 0; color: inherit; opacity: .7; font-size: .7rem; text-align: center; }
 
 .audienceSection > .eyebrow, .audienceSection > h2, .demoSection > .eyebrow, .demoSection > h2, .bonusSection > .eyebrow, .bonusSection > h2, .faqSection > .eyebrow, .faqSection > h2 { text-align: center; }
@@ -142,6 +147,8 @@ h2 { font-size: clamp(2rem, 4vw, 3.25rem); }
 .planList { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
 .planList li { display: grid; grid-template-columns: 20px 1fr; gap: 8px; color: #3e5961; font-size: .8rem; }
 .planList li > span:first-child { width: 18px; height: 18px; display: grid; place-items: center; margin-top: 2px; border-radius: 50%; background: #dff3e8; color: #287d58; font-size: .68rem; font-weight: 700; }
+.planList li.lifetimeBenefit { margin-inline: -8px; padding: 8px; border: 1px solid #b9dce6; border-radius: 8px; background: var(--sky); color: var(--petroleum); font-weight: 700; }
+.planList li.lifetimeBenefit > span:first-child { font-size: .9rem; }
 .planButton { width: 100%; margin-top: 26px; }
 .basicButton { border: 2px solid var(--petroleum); background: var(--white); color: var(--petroleum); }
 .basicButton:hover { background: var(--sky); }
@@ -219,6 +226,8 @@ footer strong { color: var(--white); }
   .hero h1 { max-width: 18ch; font-size: clamp(2.15rem,10.5vw,3.05rem); }
   .heroMedia { width: 100%; max-width: 430px; align-self: center; }
   .productMockup { min-height: 500px; }
+  .heroLifetime { align-items: flex-start; }
+  .heroLifetime p { max-width: 260px; }
   .audienceGrid, .bonusGrid { grid-template-columns: 1fr; }
   .audienceCard { min-height: 0; }
   .serviceFlow { grid-template-columns: 1fr; padding: 20px; }
