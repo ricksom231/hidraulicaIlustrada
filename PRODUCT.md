@@ -2,24 +2,35 @@
 
 ## Oferta
 
-**+200 Técnicas para Servir como um Garçom Profissional** — material digital, visual e de consulta rápida, acompanhado de 30 roteiros práticos de serviço.
+**+180 Problemas Hidráulicos Explicados com Imagens** — guia visual de consulta rápida para reconhecer situações, possíveis causas e pontos importantes durante serviços hidráulicos.
 
 ## Público
 
-Garçons que já trabalham em restaurantes, bares, hotéis, buffets e eventos e desejam aprimorar agilidade, elegância, segurança e presença no atendimento.
+Encanadores iniciantes e autônomos, ajudantes, pedreiros, faz-tudo e pessoas que estão começando a pegar serviços por conta própria.
 
 ## Personalidade
 
-Direta, refinada, prática, confiável e acessível. A identidade combina azul profundo, marfim e dourado contido, com linguagem de aprimoramento e hospitalidade.
+Técnica, direta, moderna, visual e confiável. A identidade usa azul petróleo, azul hidráulico, branco, laranja e verde, com linguagem simples de quem conhece o dia a dia do serviço.
 
 ## Princípios
 
 - Prioridade para leitura e conversão em celulares.
-- Conteúdo curto, visual e demonstrativo.
-- Plano Completo como escolha principal, sem ocultar o Plano Básico.
-- Segurança, higiene e regras de cada estabelecimento acima de exibicionismo.
-- Sem promessas exageradas e sem links de compra enquanto os destinos oficiais não forem configurados.
+- Produto apresentado como guia de consulta, não como curso.
+- Conteúdo curto, visual e sem promessas exageradas.
+- Plano Completo como escolha principal, sem esconder o Plano Básico.
+- Segurança e avaliação profissional quando a situação exigir.
 
 ## Configuração pendente
 
-Preencher `BASIC_CHECKOUT_URL`, `COMPLETE_CHECKOUT_URL` e `WHATSAPP_URL` no início de `src/App.jsx`.
+Substituir em `src/data.js`:
+
+- `CHECKOUT_BASIC_URL`
+- `CHECKOUT_COMPLETE_URL`
+- `CHECKOUT_COMPLETE_POPUP_URL`
+
+Substituir os slots de imagem identificados no HTML por:
+
+- `BONUS_1_IMAGE`
+- `BONUS_2_IMAGE`
+- `BONUS_3_IMAGE`
+- `BONUS_4_IMAGE`
