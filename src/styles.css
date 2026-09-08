@@ -101,30 +101,32 @@ h2 { font-size: clamp(2rem, 4vw, 3.25rem); }
 .bonusPrice s { grid-row: 1/3; grid-column: 2; color: var(--petroleum); font-weight: 700; }
 .bonusPrice strong { color: var(--green); font-size: .66rem; }
 
-.valueSection { padding: 0 max(20px, calc((100vw - 1160px)/2)) clamp(78px, 9vw, 120px); }
-.valueBox { position: relative; overflow: hidden; padding: clamp(30px, 6vw, 68px); border-radius: 18px; background: var(--petroleum); color: var(--white); }
-.valueBox::after { content: ''; position: absolute; right: -170px; bottom: -190px; width: 440px; height: 440px; border: 1px solid rgba(112,205,231,.24); border-radius: 50%; }
+.valueSection { display: flex; justify-content: center; padding: 0 20px clamp(64px, 7vw, 88px); }
+.valueBox { position: relative; width: min(100%, 560px); overflow: hidden; padding: 32px 34px 30px; border: 1px solid rgba(107,198,222,.34); border-radius: 16px; background: var(--petroleum); color: var(--white); box-shadow: 0 18px 42px rgba(18,58,74,.15); }
+.valueBox::after { content: ''; position: absolute; right: -90px; bottom: -110px; width: 230px; height: 230px; border: 1px solid rgba(112,205,231,.16); border-radius: 50%; }
 .valueBadge { position: relative; z-index: 1; display: inline-flex; padding: 7px 11px; border-radius: 99px; background: var(--orange); color: #24353b; font-size: .66rem; font-weight: 700; letter-spacing: .07em; }
-.valueBox > p { position: relative; z-index: 1; margin: 24px 0 5px; color: #9bd4e4; font-size: .8rem; }
-.valueBox h2 { position: relative; z-index: 1; max-width: 18ch; margin-bottom: 32px; color: var(--white); }
+.valueBox h2 { position: relative; z-index: 1; max-width: 17ch; margin: 18px 0 24px; color: var(--white); font-size: clamp(1.65rem, 4vw, 2.15rem); }
 .valueLines { position: relative; z-index: 1; border-top: 1px solid rgba(255,255,255,.18); }
-.valueLines > div { display: flex; justify-content: space-between; gap: 18px; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,.18); color: #e3f0f3; font-size: .8rem; }
+.valueLines > div { display: flex; align-items: baseline; justify-content: space-between; gap: 18px; padding: 11px 0; border-bottom: 1px solid rgba(255,255,255,.16); color: #e3f0f3; font-size: .75rem; }
 .valueLines strong { color: var(--orange); white-space: nowrap; }
-.valueTotal { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; align-items: end; gap: 28px; margin: 34px 0; }
+.valueTotal { position: relative; z-index: 1; display: grid; gap: 16px; margin-top: 24px; }
 .valueTotal > div { display: flex; flex-direction: column; }
-.valueTotal > div:last-child { align-items: flex-end; text-align: right; }
-.valueTotal small { color: #9ccbd7; font-size: .65rem; font-weight: 600; letter-spacing: .07em; }
-.valueTotal s { color: #d1e5ea; font-size: 1.65rem; }
-.valueTotal b { color: #ffc15f; font-size: clamp(3.6rem, 8vw, 6.5rem); line-height: .95; letter-spacing: -.05em; }
-.lightCta { position: relative; z-index: 1; width: min(100%, 270px); margin: 0; background: var(--white); color: var(--petroleum); }
+.valueTotal > div:last-child { padding: 16px 18px 14px; border-radius: 10px; background: rgba(20,126,163,.24); text-align: center; }
+.valueTotal small { color: #a9d3de; font-size: .6rem; font-weight: 600; letter-spacing: .07em; }
+.valueTotal s { color: #d1e5ea; font-size: 1.45rem; }
+.valueTotal b { margin-top: 3px; color: #ffc15f; font-size: clamp(2.9rem, 7vw, 4rem); line-height: .95; letter-spacing: -.05em; }
 
 .priceSection { display: grid; grid-template-columns: minmax(320px,.86fr) minmax(420px,1.14fr); align-items: start; gap: 24px; padding: clamp(80px,9vw,120px) max(24px, calc((100vw - 1000px)/2)); background: var(--paper); }
-.priceIntro { grid-column: 1/-1; max-width: 760px; margin: auto; text-align: center; }
-.priceIntro h2 { margin-bottom: 13px; }
-.priceIntro > p:not(.eyebrow) { color: var(--muted); }
-.pricingTimer { width: max-content; max-width: 100%; display: flex; align-items: center; gap: 11px; margin: 24px auto 22px; padding: 10px 13px; border: 1px solid var(--border); border-radius: 8px; background: var(--white); box-shadow: 0 8px 18px rgba(18,58,74,.08); }
-.pricingTimer span { color: var(--petroleum); font-size: .67rem; font-weight: 700; letter-spacing: .06em; }
-.pricingTimer strong { color: #d96f10; font-size: 1.38rem; font-variant-numeric: tabular-nums; }
+.priceIntro { grid-column: 1/-1; width: min(100%, 760px); margin: 0 auto 8px; padding: 28px 30px 25px; border: 1px solid rgba(20,126,163,.5); border-radius: 16px; background: var(--petroleum); text-align: center; box-shadow: 0 16px 38px rgba(18,58,74,.13); }
+.priceIntro .eyebrow { margin-bottom: 8px; color: var(--orange); }
+.priceIntro h2 { margin-bottom: 20px; color: var(--white); font-size: clamp(1.8rem, 4vw, 2.75rem); }
+.pricingCountdown > p { margin: 0 0 10px; color: rgba(255,255,255,.78); font-size: .64rem; font-weight: 700; letter-spacing: .11em; }
+.pricingTimer { width: max-content; max-width: 100%; display: flex; align-items: flex-start; justify-content: center; gap: 8px; margin: 0 auto; }
+.timerUnit { display: grid; justify-items: center; gap: 7px; }
+.timerDigits { display: flex; gap: 4px; }
+.timerDigits b { width: 31px; height: 39px; display: grid; place-items: center; border: 1px solid rgba(107,198,222,.58); border-radius: 6px; background: #0b2c38; color: var(--white); font-size: 1.35rem; font-variant-numeric: tabular-nums; line-height: 1; box-shadow: inset 0 -8px 14px rgba(0,0,0,.12); }
+.timerUnit small { color: rgba(255,255,255,.58); font-size: .48rem; font-weight: 600; letter-spacing: .09em; }
+.timerSeparator { padding-top: 7px; color: var(--orange); font-size: 1.35rem; font-weight: 700; line-height: 1; }
 .basicCard, .completeCard { position: relative; width: 100%; padding: clamp(25px,4vw,40px); border-radius: 14px; background: var(--white); color: var(--ink); }
 .basicCard { margin-top: 34px; border: 1px solid var(--border); }
 .completeCard { border: 3px solid var(--hydraulic); background: linear-gradient(180deg,#eef9fb 0%,#fff 26%); box-shadow: 0 22px 55px rgba(20,92,117,.16); }
@@ -222,17 +224,14 @@ footer strong { color: var(--white); }
   .serviceFlow { grid-template-columns: 1fr; padding: 20px; }
   .flowSteps { grid-template-columns: 1fr 1fr; gap: 10px 0; }
   .deliverablePreview { flex-basis: 185px; }
-  .valueSection { padding: 0 7px 72px; }
-  .valueBox { padding: 28px 17px; }
+  .valueSection { padding: 0 12px 64px; }
+  .valueBox { padding: 27px 20px 24px; }
   .valueLines > div { align-items: flex-start; }
   .valueLines span { font-size: .72rem; line-height: 1.45; }
   .valueLines strong { font-size: .75rem; }
-  .valueTotal { grid-template-columns: 1fr; gap: 18px; }
-  .valueTotal > div:last-child { align-items: flex-start; text-align: left; }
-  .valueTotal b { font-size: clamp(3.8rem,18vw,5rem); }
-  .lightCta { width: 100%; }
+  .valueTotal b { font-size: clamp(2.9rem,14vw,3.7rem); }
   .priceSection { display: flex; flex-direction: column; padding: 76px 16px; }
-  .priceIntro { width: 100%; }
+  .priceIntro { width: 100%; padding: 25px 14px 22px; }
   .completeCard { order: 1; }
   .basicCard { order: 2; margin-top: 18px; }
   .priceIntro { order: 0; }
@@ -256,7 +255,10 @@ footer strong { color: var(--white); }
   .mockPage { width: 50%; }
   .flowSteps { grid-template-columns: 1fr; }
   .flowSteps span { min-height: 74px; border-left: 0; border-top: 1px solid var(--border); }
-  .pricingTimer { width: 100%; justify-content: center; }
+  .pricingTimer { gap: 5px; }
+  .timerDigits { gap: 3px; }
+  .timerDigits b { width: 27px; height: 36px; font-size: 1.2rem; }
+  .timerSeparator { padding-top: 6px; font-size: 1.2rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {

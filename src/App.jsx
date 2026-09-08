@@ -179,15 +179,23 @@ function BonusSection() {
 }
 
 function BonusValueAnchor() {
+  const valueItems = [
+    ['+80 Mapas Visuais de Instalações', bonuses[0].value],
+    ['Guia Visual de Peças e Conexões', bonuses[1].value],
+    ['+50 Erros Hidráulicos — Certo x Errado', bonuses[2].value],
+    ['Consulta Rápida por Sintoma', bonuses[3].value],
+  ];
+
   return (
     <section className="valueSection">
       <div className="valueBox" data-reveal>
         <span className="valueBadge">MATERIAIS EXTRAS INCLUÍDOS</span>
-        <p>Somando tudo o que você vai levar</p>
-        <h2>Tudo o que vem no Plano Completo</h2>
-        <div className="valueLines">{bonuses.map((bonus) => <div key={bonus.title}><span>+ {bonus.title}</span><strong>{bonus.value}</strong></div>)}</div>
-        <div className="valueTotal"><div><small>VALOR TOTAL DOS MATERIAIS EXTRAS</small><s>R$ 146,60</s></div><div><small>HOJE NO PLANO COMPLETO</small><b>GRÁTIS</b></div></div>
-        <CTA className="lightCta">VER O PLANO COMPLETO</CTA>
+        <h2>Somando tudo o que você vai levar</h2>
+        <div className="valueLines">{valueItems.map(([name, value]) => <div key={name}><span>{name}</span><strong>{value}</strong></div>)}</div>
+        <div className="valueTotal">
+          <div><small>VALOR TOTAL DOS MATERIAIS EXTRAS</small><s>R$ 146,60</s></div>
+          <div><small>MAS NO PLANO COMPLETO VOCÊ RECEBE:</small><b>GRÁTIS</b></div>
+        </div>
       </div>
     </section>
   );
@@ -195,6 +203,31 @@ function BonusValueAnchor() {
 
 function PlanList({ items }) {
   return <ul className="planList">{items.map((item) => <li key={item}><span aria-hidden="true">✓</span><span>{item}</span></li>)}</ul>;
+}
+
+function TimerUnit({ value, label }) {
+  return (
+    <div className="timerUnit">
+      <div className="timerDigits">{String(value).padStart(2, '0').split('').map((digit, index) => <b key={`${label}-${index}`}>{digit}</b>)}</div>
+      <small>{label}</small>
+    </div>
+  );
+}
+
+function PricingCountdown({ time }) {
+  const [minutes = '00', seconds = '00'] = time.split(':');
+  return (
+    <div className="pricingCountdown" role="timer" aria-label={`Oferta disponível por ${minutes} minutos e ${seconds} segundos`}>
+      <p>OFERTA DISPONÍVEL POR:</p>
+      <div className="pricingTimer" aria-hidden="true">
+        <TimerUnit value="00" label="HORAS" />
+        <span className="timerSeparator">:</span>
+        <TimerUnit value={minutes} label="MINUTOS" />
+        <span className="timerSeparator">:</span>
+        <TimerUnit value={seconds} label="SEGUNDOS" />
+      </div>
+    </div>
+  );
 }
 
 function UpgradeModal({ onClose }) {
@@ -226,7 +259,7 @@ function UpgradeModal({ onClose }) {
 function PricingSection({ time, onBasicClick }) {
   return (
     <section className="priceSection" id="planos">
-      <div className="priceIntro" data-reveal><p className="eyebrow">ESCOLHA COMO VOCÊ QUER RECEBER</p><h2>Um material principal. Duas formas de levar.</h2><p>Os dois planos têm entrega digital. A diferença está na quantidade de referências para consultar.</p><div className="pricingTimer" role="timer"><span>OFERTA DISPONÍVEL POR:</span><strong>{time}</strong></div></div>
+      <div className="priceIntro" data-reveal><p className="eyebrow">ESCOLHA SEU PLANO</p><h2>Escolha o melhor plano para você</h2><PricingCountdown time={time} /></div>
       <article className="basicCard" data-reveal><p className="planEyebrow">PLANO BÁSICO</p><h3>O guia principal</h3><p>Para quem quer consultar as 180 situações ilustradas.</p><div className="planPrice"><small>PAGAMENTO ÚNICO</small><strong><sup>R$</sup>10<em>,00</em></strong></div><PlanList items={basicItems} /><button className="planButton basicButton" type="button" onClick={onBasicClick}>QUERO O PLANO BÁSICO</button><p className="microcopy">Acesso digital imediato</p></article>
       <article className="completeCard" data-reveal style={{ '--reveal-delay': '80ms' }}><span className="featuredBadge">MAIS VANTAJOSO</span><p className="planEyebrow">PLANO COMPLETO</p><h3>O guia + biblioteca visual</h3><p>Para consultar por problema, instalação, peça, erro ou sintoma.</p><div className="planPrice"><small>PAGAMENTO ÚNICO</small><strong><sup>R$</sup>27<em>,90</em></strong><span>Por mais R$ 17,90, você leva os quatro materiais extras.</span></div><PlanList items={completeItems} /><a className="planButton completeButton" href={checkoutLinks.complete}>QUERO O PLANO COMPLETO →</a><p className="microcopy">Acesso imediato aos 5 materiais</p></article>
     </section>
