@@ -153,10 +153,10 @@ function ProductCarousel() {
   );
 }
 
-function ImageSlot({ label, title }) {
+function BonusImage({ src, title }) {
   return (
-    <figure className="imageSlot" data-image-slot={label} aria-label={`Espaço reservado para a capa de ${title}`}>
-      <span className="slotIcon" aria-hidden="true">▧</span><strong>{label}</strong><small>Substituir pela imagem oficial</small>
+    <figure className="imageSlot bonusImage">
+      <img src={src} alt={`Capa do bônus ${title}`} loading="lazy" decoding="async" />
     </figure>
   );
 }
@@ -171,7 +171,7 @@ function BonusSection() {
         {bonuses.map((bonus, index) => (
           <article className="bonusCard" data-reveal style={{ '--reveal-delay': `${index * 65}ms` }} key={bonus.title}>
             <span className="bonusNumber">EXTRA {String(index + 1).padStart(2, '0')}</span>
-            <ImageSlot label={bonus.slot} title={bonus.title} />
+            <BonusImage src={bonus.image} title={bonus.title} />
             <h3>{bonus.title}</h3><p>{bonus.text}</p>
             <div className="bonusPrice"><small>Valor percebido</small><s>{bonus.value}</s><strong>Incluído no Completo</strong></div>
           </article>

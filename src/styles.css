@@ -96,6 +96,8 @@ h2 { font-size: clamp(2rem, 4vw, 3.25rem); }
 .bonusCard { position: relative; display: flex; flex-direction: column; padding: 16px; border: 1px solid var(--border); border-radius: 12px; background: var(--white); box-shadow: 0 10px 28px rgba(18,58,74,.08); }
 .bonusNumber { position: absolute; z-index: 2; top: 26px; left: 26px; padding: 6px 9px; border-radius: 6px; background: var(--orange); color: #20323a; font-size: .58rem; font-weight: 700; letter-spacing: .07em; }
 .imageSlot { aspect-ratio: 4/3; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; margin: 0 0 18px; border: 1px dashed #79b6c9; border-radius: 9px; background: var(--sky); color: var(--hydraulic); text-align: center; }
+.imageSlot.bonusImage { overflow: hidden; border: 1px solid #d8e6ea; background: #f4f9fa; }
+.bonusImage img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .slotIcon { font-size: 1.8rem; line-height: 1; }
 .imageSlot strong { font-size: .66rem; letter-spacing: .07em; }
 .imageSlot small { color: #56808c; font-size: .58rem; }
