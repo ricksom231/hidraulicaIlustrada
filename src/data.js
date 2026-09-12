@@ -1,7 +1,7 @@
 export const checkoutLinks = {
-  basic: 'CHECKOUT_BASIC_URL',
-  complete: 'CHECKOUT_COMPLETE_URL',
-  completePopup: 'CHECKOUT_COMPLETE_POPUP_URL',
+  basic: 'https://zuckpay.com.br/checkout/180-problemas-hidraulicos-explicados-com-imagens-basico',
+  complete: 'https://zuckpay.com.br/checkout/180-problemas-hidraulicos-explicados-com-imagens-completo',
+  completePopup: 'https://zuckpay.com.br/checkout/180-problemas-hidraulicos-explicados-com-imagens-completo-1',
 };
 
 export const audienceCards = [
