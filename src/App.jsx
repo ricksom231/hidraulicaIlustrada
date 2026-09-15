@@ -128,7 +128,7 @@ function CarouselRow({ items, reverse = false }) {
       <div className={`deliverableTrack ${reverse ? 'trackReverse' : 'trackForward'}`}>
         {[0, 1].map((loop) => (
           <div className="deliverableLoopGroup" key={`${reverse ? 'r' : 'f'}-${loop}`}>
-            {items.map((src, index) => <figure className="deliverablePreview" key={`${loop}-${src}`}><img src={src} alt="" loading={loop === 0 && index < 2 ? 'eager' : 'lazy'} decoding="async" /></figure>)}
+            {items.map((src) => <figure className="deliverablePreview" key={`${loop}-${src}`}><img src={src} alt="" width="640" height="907" loading={loop === 0 ? 'eager' : 'lazy'} decoding="async" /></figure>)}
           </div>
         ))}
       </div>
@@ -144,8 +144,8 @@ function ProductCarousel() {
       <p className="sectionLead" data-reveal>Nem sempre o problema está onde a água aparece. Compare a situação com as imagens e veja o que vale conferir primeiro.</p>
       <div className="deliverableCarousel" role="group" aria-label="Prévia de páginas internas do guia">
         <div className="deliverableViewport">
-          <div data-reveal><CarouselRow items={deliverablePages.slice(0, 5)} /></div>
-          <div data-reveal style={{ '--reveal-delay': '80ms' }}><CarouselRow items={deliverablePages.slice(5)} reverse /></div>
+          <CarouselRow items={deliverablePages.slice(0, 5)} />
+          <CarouselRow items={deliverablePages.slice(5)} reverse />
         </div>
       </div>
       <div className="pillRow" data-reveal><span>Fácil de consultar</span><span>Organizado por categoria</span><span>Feito para abrir no celular</span></div>
@@ -156,7 +156,7 @@ function ProductCarousel() {
 function BonusImage({ src, title }) {
   return (
     <figure className="imageSlot bonusImage">
-      <img src={src} alt={`Capa do bônus ${title}`} loading="lazy" decoding="async" />
+      <img src={src} alt={`Capa do bônus ${title}`} width="1448" height="1086" loading="lazy" decoding="async" />
     </figure>
   );
 }

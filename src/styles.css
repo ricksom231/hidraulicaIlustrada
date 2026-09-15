@@ -80,7 +80,7 @@ h2 { font-size: clamp(2rem, 4vw, 3.25rem); }
 .deliverableCarousel { width: 100vw; margin: 42px 0 0 calc(50% - 50vw); overflow: hidden; }
 .deliverableViewport { display: grid; gap: 16px; }
 .carouselRow { width: 100%; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
-.deliverableTrack { display: flex; width: max-content; will-change: transform; backface-visibility: hidden; }
+.deliverableTrack { display: flex; width: max-content; min-width: 100%; will-change: transform; backface-visibility: hidden; }
 .deliverableLoopGroup { display: flex; flex: 0 0 auto; gap: 16px; padding-right: 16px; }
 .deliverablePreview { flex: 0 0 clamp(160px, 17vw, 245px); aspect-ratio: 480 / 680; margin: 0; overflow: hidden; border: 1px solid var(--border); border-top: 3px solid var(--hydraulic); border-radius: 10px; background: var(--white); box-shadow: 0 12px 30px rgba(20,69,85,.12); }
 .deliverablePreview img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; }
@@ -234,7 +234,7 @@ footer strong { color: var(--white); }
   .audienceCard { min-height: 0; }
   .serviceFlow { grid-template-columns: 1fr; padding: 20px; }
   .flowSteps { grid-template-columns: 1fr 1fr; gap: 10px 0; }
-  .carouselRow { min-height: 264px; }
+  .carouselRow { min-height: 264px; -webkit-mask-image: none; mask-image: none; }
   .deliverablePreview { flex-basis: 185px; }
   .valueSection { padding: 0 12px 64px; }
   .valueBox { padding: 27px 20px 24px; }
