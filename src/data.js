@@ -13,7 +13,7 @@ export const audienceCards = [
 
 export const deliverablePages = Array.from(
   { length: 9 },
-  (_, index) => `/assets/product-pages/page-${String(index + 1).padStart(2, '0')}.png`,
+  (_, index) => `/assets/product-pages/page-${String(index + 1).padStart(2, '0')}.webp`,
 );
 
 export const bonuses = [
@@ -21,25 +21,25 @@ export const bonuses = [
     title: '+80 Mapas Visuais de Instalações Hidráulicas',
     text: 'Veja visualmente banheiro, cozinha, caixa d’água, chuveiro, vaso, pia, tanque, registros e outros sistemas.',
     value: 'R$ 47,90',
-    image: '/assets/bonuses/bonus-01.png',
+    image: '/assets/bonuses/bonus-01.webp',
   },
   {
     title: 'Guia Visual de Peças e Conexões Hidráulicas',
     text: 'Imagem, nome, função e aplicação das principais peças.',
     value: 'R$ 37,90',
-    image: '/assets/bonuses/bonus-02.png',
+    image: '/assets/bonuses/bonus-02.webp',
   },
   {
     title: '+50 Erros Hidráulicos — Certo x Errado',
     text: 'Comparações rápidas mostrando situações incorretas e como deveriam estar.',
     value: 'R$ 32,90',
-    image: '/assets/bonuses/bonus-03.png',
+    image: '/assets/bonuses/bonus-03.webp',
   },
   {
     title: 'Guia de Consulta Rápida por Sintoma',
     text: 'Pouca pressão, mau cheiro, vazamento, retorno, barulho e outros sinais organizados para localizar as páginas certas.',
     value: 'R$ 27,90',
-    image: '/assets/bonuses/bonus-04.png',
+    image: '/assets/bonuses/bonus-04.webp',
   },
 ];
 

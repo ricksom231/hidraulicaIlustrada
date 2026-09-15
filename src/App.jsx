@@ -86,9 +86,9 @@ function Hero() {
       </div>
       <div className="heroMedia">
         <div className="productMockup" aria-label="Mockup do guia +180 Problemas Hidráulicos">
-          <img className="mockPage mockPageBack" src="/assets/product-pages/page-02.png" alt="Página interna do guia mostrando uma torneira em corte" />
-          <img className="mockPage mockPageSide" src="/assets/product-pages/page-06.png" alt="Página interna do guia mostrando uma instalação hidráulica" />
-          <img className="heroImage" src="/assets/hero-product.png" alt="Capa do guia +180 Problemas Hidráulicos Explicados com Imagens" width="1055" height="1491" fetchPriority="high" />
+          <img className="mockPage mockPageBack" src="/assets/product-pages/page-02.webp" alt="Página interna do guia mostrando uma torneira em corte" />
+          <img className="mockPage mockPageSide" src="/assets/product-pages/page-06.webp" alt="Página interna do guia mostrando uma instalação hidráulica" />
+          <img className="heroImage" src="/assets/hero-product.webp" alt="Capa do guia +180 Problemas Hidráulicos Explicados com Imagens" width="1055" height="1491" fetchPriority="high" />
         </div>
         <CTA className="primaryCta">QUERO ACESSAR O GUIA VISUAL</CTA>
         <div className="heroLifetime" aria-label="Acesso 100% vitalício. Comprou uma vez. O acesso ao material não expira.">
@@ -126,7 +126,7 @@ function CarouselRow({ items, reverse = false }) {
   return (
     <div className="carouselRow" aria-hidden="true">
       <div className={`deliverableTrack ${reverse ? 'trackReverse' : 'trackForward'}`}>
-        {[0, 1, 2].map((loop) => (
+        {[0, 1].map((loop) => (
           <div className="deliverableLoopGroup" key={`${reverse ? 'r' : 'f'}-${loop}`}>
             {items.map((src, index) => <figure className="deliverablePreview" key={`${loop}-${src}`}><img src={src} alt="" loading={loop === 0 && index < 2 ? 'eager' : 'lazy'} decoding="async" /></figure>)}
           </div>
