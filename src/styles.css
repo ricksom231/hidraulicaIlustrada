@@ -79,8 +79,8 @@ h2 { font-size: clamp(2rem, 4vw, 3.25rem); }
 .demoSection > h2 { max-width: 760px; margin: 0 auto 15px; }
 .deliverableCarousel { width: 100vw; margin: 42px 0 0 calc(50% - 50vw); overflow: hidden; overflow: clip; }
 .deliverableViewport { display: grid; gap: 16px; }
-.carouselRow { width: 100%; min-height: clamp(226px, 24vw, 347px); overflow: hidden; overflow: clip; contain: layout paint; touch-action: pan-y; -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
-.deliverableTrack { display: flex; width: max-content; min-width: 100%; will-change: transform; backface-visibility: hidden; transform: translate3d(0,0,0); }
+.carouselRow { width: 100%; min-height: clamp(226px, 24vw, 347px); overflow: hidden; isolation: isolate; touch-action: pan-y; -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
+.deliverableTrack { display: flex; width: max-content; min-width: 100%; will-change: transform; transform: translate3d(0,0,0); }
 .deliverableLoopGroup { display: flex; flex: 0 0 auto; gap: 16px; padding-right: 16px; }
 .deliverablePreview { flex: 0 0 clamp(160px, 17vw, 245px); aspect-ratio: 640 / 907; margin: 0; overflow: hidden; border: 1px solid var(--border); border-top: 3px solid var(--hydraulic); border-radius: 14px; background: var(--white); box-shadow: 0 12px 30px rgba(20,69,85,.12); }
 .deliverablePreview img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; }
