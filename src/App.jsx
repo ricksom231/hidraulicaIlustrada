@@ -128,7 +128,7 @@ function CarouselRow({ items, reverse = false }) {
       <div className={`deliverableTrack ${reverse ? 'trackReverse' : 'trackForward'}`}>
         {[0, 1].map((loop) => (
           <div className="deliverableLoopGroup" key={`${reverse ? 'r' : 'f'}-${loop}`}>
-            {items.map((src) => <figure className="deliverablePreview" key={`${loop}-${src}`}><img src={src} alt="" width="640" height="907" loading={loop === 0 ? 'eager' : 'lazy'} decoding="async" /></figure>)}
+            {items.map((src) => <figure className="deliverablePreview" key={`${loop}-${src}`}><img src={src} alt="" width="640" height="907" loading="eager" fetchPriority={loop === 0 && index === 0 ? 'high' : 'auto'} decoding="async" /></figure>)}
           </div>
         ))}
       </div>
