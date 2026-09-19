@@ -84,8 +84,8 @@ h2 { font-size: clamp(2rem, 4vw, 3.25rem); }
 .deliverableLoopGroup { display: flex; flex: 0 0 auto; gap: 16px; padding-right: 16px; }
 .deliverablePreview { flex: 0 0 clamp(160px, 17vw, 245px); aspect-ratio: 640 / 907; margin: 0; overflow: hidden; border: 1px solid var(--border); border-top: 3px solid var(--hydraulic); border-radius: 14px; background: var(--white); box-shadow: 0 12px 30px rgba(20,69,85,.12); }
 .deliverablePreview img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; }
-.trackForward { animation: carouselForward 38s linear infinite; }
-.trackReverse { animation: carouselReverse 44s linear infinite; }
+.trackForward { animation: carouselForward 84s linear infinite; }
+.trackReverse { animation: carouselReverse 90s linear infinite; }
 @keyframes carouselForward { from { transform: translate3d(0,0,0); } to { transform: translate3d(-50%,0,0); } }
 @keyframes carouselReverse { from { transform: translate3d(-50%,0,0); } to { transform: translate3d(0,0,0); } }
 .pillRow { display: flex; flex-wrap: wrap; justify-content: center; gap: 9px; margin-top: 26px; }
