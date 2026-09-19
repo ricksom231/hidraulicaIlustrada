@@ -122,12 +122,12 @@ function AudienceSection() {
   );
 }
 
-function CarouselRow({ items, reverse = false }) {
+function CarouselRow({ items }) {
   return (
     <div className="carouselRow" aria-hidden="true">
-      <div className={`deliverableTrack ${reverse ? 'trackReverse' : 'trackForward'}`}>
+      <div className="deliverableTrack trackForward">
         {[0, 1, 2].map((loop) => (
-          <div className="deliverableLoopGroup" key={`${reverse ? 'r' : 'f'}-${loop}`}>
+          <div className="deliverableLoopGroup" key={loop}>
             {items.map((src, index) => <figure className="deliverablePreview" key={`${loop}-${src}`}><img src={src} alt="" width="640" height="907" loading="eager" fetchPriority={loop === 0 && index === 0 ? 'high' : 'auto'} decoding="async" /></figure>)}
           </div>
         ))}
@@ -145,7 +145,7 @@ function ProductCarousel() {
       <div className="deliverableCarousel" role="group" aria-label="Prévia de páginas internas do guia">
         <div className="deliverableViewport">
           <CarouselRow items={deliverablePages.slice(0, 5)} />
-          <CarouselRow items={deliverablePages.slice(5)} reverse />
+          <CarouselRow items={deliverablePages.slice(5)} />
         </div>
       </div>
       <div className="pillRow" data-reveal><span>Fácil de consultar</span><span>Organizado por categoria</span><span>Feito para abrir no celular</span></div>
